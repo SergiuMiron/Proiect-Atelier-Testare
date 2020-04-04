@@ -29,6 +29,7 @@ namespace UnitTestProject1
             loginPage.LoginApplication();
 
             var expectedResult = "Admin";
+            //actual result
             var homePage = new HomePage(driver);
 
             Assert.AreEqual(expectedResult, homePage.menuItemControl.AdminUser);
