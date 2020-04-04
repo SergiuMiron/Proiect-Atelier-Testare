@@ -16,6 +16,7 @@ namespace UnitTestProject1
         [TestInitialize]
         public void SetUp()
         {
+            //test
             driver = new ChromeDriver();
             loginPage = new LoginPage(driver);
             driver.Manage().Window.Maximize();
