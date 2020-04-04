@@ -17,15 +17,16 @@ namespace UnitTestProject1.PageObjects.Controllers
         }
     }
 
-    public class LoggedInMenuItemControl: MenuItemControl
+    public class LoggedInMenuItemControl : MenuItemControl
     {
-        private By user = By.CssSelector("#menu_admin_viewAdminModule .left-menu-title");
-        private IWebElement LblUser => driver.FindElement(user);
+        private By userName = By.Id("account-name");
+        private IWebElement LblUserName => driver.FindElement(userName);
 
         public LoggedInMenuItemControl(IWebDriver browser) : base(browser)
         {
+
         }
 
-        public string AdminUser => LblUser.Text;
+        public string UserNameText => LblUserName.Text;
     }
 }
