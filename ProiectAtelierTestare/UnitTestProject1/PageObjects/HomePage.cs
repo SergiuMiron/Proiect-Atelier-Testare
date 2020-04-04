@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnitTestProject1.PageObjects.Controllers;
+using OpenQA.Selenium.Support.UI;
+using ExpectedConditions = SeleniumExtras.WaitHelpers.ExpectedConditions;
 
 namespace UnitTestProject1.PageObjects
 {
@@ -16,6 +18,11 @@ namespace UnitTestProject1.PageObjects
         public HomePage(IWebDriver browser)
         {
             driver = browser;
+            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(2));
+            wait.Until(ExpectedConditions.ElementIsVisible(userName));
         }
+
+        private By userName = By.Id("account-name");
+        private IWebElement btnUser => driver.FindElement(userName);
     }
 }

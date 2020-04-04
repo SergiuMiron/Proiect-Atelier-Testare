@@ -33,12 +33,31 @@ namespace UnitTestProject1.PageObjects
             return driver.FindElement(By.Id("btnLogin"));
         }
 
-        public void LoginApplication()
+        private IWebElement BtnDropDownOptions()
+        {
+            return driver.FindElement(By.ClassName("dropdown-toggle"));
+        }
+
+        private IWebElement UserKevin()
+        {
+            return driver.FindElement(By.XPath("//*[@data-username='kevin']"));
+        }
+
+        public void LoginApplication(string username, string password)
         {
             var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(2));
-            //TxtUsername().SendKeys(username);
-            //TxtPassword().SendKeys(password);
+            TxtUsername().Clear();
+            TxtPassword().Clear();
+            TxtUsername().SendKeys(username);
+            TxtPassword().SendKeys(password);
             BtnLogin().Click();
+        }
+
+        public void DifferentLogin()
+        {
+            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(2));
+            BtnDropDownOptions().Click();
+            UserKevin().Click();
         }
     }
 }

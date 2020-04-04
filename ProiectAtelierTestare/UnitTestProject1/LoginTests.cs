@@ -17,7 +17,6 @@ namespace UnitTestProject1
         [TestInitialize]
         public void SetUp()
         {
-            //test
             driver = new ChromeDriver();
             loginPage = new LoginPage(driver);
             driver.Manage().Window.Maximize();
@@ -26,15 +25,36 @@ namespace UnitTestProject1
         }
 
         [TestMethod]
-        public void LoginAsAdmin()
+        public void AdminLogin_CorrectUser_CorrectPassword()
         {
-            loginPage.LoginApplication();
+            loginPage.LoginApplication("admin", "admin123");
 
-            var expectedResult = "Admin";
-            //actual result
+            var expectedResult = "Jacqueline White";
             var homePage = new HomePage(driver);
 
-            Assert.AreEqual(expectedResult, homePage.menuItemControl.AdminUser);
+            Assert.AreEqual(expectedResult, homePage.menuItemControl.UserNameText);
+        }
+
+        [TestMethod]
+        public void AdminLogin_CorrectUser_IncorrectPassword()
+        {
+            loginPage.LoginApplication("admin", "admin");
+
+            var expectedResult = "Invalid Credentials";
+            var actualResults = driver.FindElement(By.ClassName("toast-message")).Text;
+
+            Assert.AreEqual(expectedResult, actualResults);
+        }
+
+        [TestMethod]
+        public void SupervisorLogin_CorrectUser_CorrectPassword()
+        {
+            loginPage.DifferentLogin();
+
+            var expectedResult = "Kevin Mathews";
+            var homePage = new HomePage(driver);
+
+            Assert.AreEqual(expectedResult, homePage.menuItemControl.UserNameText);
         }
 
         [TestCleanup]
