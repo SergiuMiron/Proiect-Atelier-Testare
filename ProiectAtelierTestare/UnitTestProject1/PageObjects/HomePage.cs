@@ -24,5 +24,16 @@ namespace UnitTestProject1.PageObjects
 
         private By userName = By.Id("account-name");
         private IWebElement btnUser => driver.FindElement(userName);
+
+        private IWebElement BtnTraining => driver.FindElement(By.Id("menu_training_defaultTrainingModulePage"));
+        private IWebElement BtnCourses => driver.FindElement(By.Id("menu_training_viewCourseList"));
+
+        public CoursesPage NavigateToCoursesPage()
+        {
+            BtnTraining.Click();
+            BtnCourses.Click();
+            return new CoursesPage(driver);
+    
+        }
     }
 }

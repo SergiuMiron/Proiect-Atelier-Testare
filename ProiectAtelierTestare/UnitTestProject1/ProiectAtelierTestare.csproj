@@ -54,10 +54,17 @@
     <Reference Include="WebDriver, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Selenium.WebDriver.3.141.0\lib\net45\WebDriver.dll</HintPath>
     </Reference>
+    <Reference Include="WebDriver.Support, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.Support.3.141.0\lib\net45\WebDriver.Support.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddCoursesTest.cs" />
     <Compile Include="LoginTests.cs" />
+    <Compile Include="PageObjects\AddCourse\AddCourseBO.cs" />
+    <Compile Include="PageObjects\AddCourse\AddCoursePage.cs" />
     <Compile Include="PageObjects\Controllers\MenuItemControl.cs" />
+    <Compile Include="PageObjects\CoursesPage.cs" />
     <Compile Include="PageObjects\HomePage.cs" />
     <Compile Include="PageObjects\LoginPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

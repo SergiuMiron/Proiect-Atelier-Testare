@@ -10,7 +10,6 @@ namespace UnitTestProject1
     [TestClass]
     public class LoginTests
     {
-        //trd
         private IWebDriver driver;
         private LoginPage loginPage;
 
