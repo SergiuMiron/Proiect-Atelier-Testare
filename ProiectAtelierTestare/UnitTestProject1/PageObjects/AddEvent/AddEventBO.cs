@@ -12,8 +12,7 @@ namespace UnitTestProject1.PageObjects.AddEvent
         public string Date = "";
         public string Participant = "Mike Mathews";
         public string Owner = "Odis Adalwin";
-        public string Company = "Test Company";
-        public string Duration = "12:07";
-        public string Description = "Test Description";
+        public string Location = "";
+    
     }
 }

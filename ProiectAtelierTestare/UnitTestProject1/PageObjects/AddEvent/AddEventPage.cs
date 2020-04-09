@@ -24,7 +24,7 @@ namespace UnitTestProject1.PageObjects.AddEvent
         private By addEvent_name = By.Id("OhrmJob_name");
         private IWebElement Name => driver.FindElement(addEvent_name);
 
-       //private IWebElement Location => driver.FindElement(By.Id("addCourse_coordinator_empName"));
+        private IWebElement Location => driver.FindElement(By.Id("addCourse_coordinator_empName"));
 
         private IWebElement Date => driver.FindElement(By.Id("jobDueDate_root"));
 
@@ -48,6 +48,9 @@ namespace UnitTestProject1.PageObjects.AddEvent
 
             Owner.SendKeys(events.Owner);
             driver.FindElements(By.ClassName("ac_even ac_over"))[0].Click();
+
+            Location.SendKeys(events.Location);
+            driver.FindElements(By.ClassName("btn-flat picker__today"))[0].Click();
 
 
             SaveButton.Click();
