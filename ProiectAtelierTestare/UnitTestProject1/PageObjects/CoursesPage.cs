@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using UnitTestProject1.PageObjects.AddCourse;
 using UnitTestProject1.PageObjects.Controllers;
@@ -31,6 +32,15 @@ namespace UnitTestProject1.PageObjects
             driver.FindElement(addButton).Click();
             //driver.SwitchTo().DefaultContent();
             return new AddCoursePage(driver);
+        }
+
+        public void SearchFilter(string titleName)
+        {
+            var searchModal = By.Id("searchModal");
+            driver.FindElement(searchModal).Click();
+            driver.FindElement(By.Id("searchCourse_title")).SendKeys(titleName);
+            var searchButton = By.Id("searchBtn");
+            driver.FindElement(searchButton).Click();
         }
 
     }

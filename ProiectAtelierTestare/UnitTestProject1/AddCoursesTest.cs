@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using UnitTestProject1.PageObjects;
 using UnitTestProject1.PageObjects.AddCourse;
@@ -18,6 +19,8 @@ namespace UnitTestProject1
     {
         private IWebDriver driver;
         private AddCoursePage addCoursePage;
+        private HomePage homePage;
+        private CoursesPage coursesPage;
 
         [TestInitialize]
         public void Setup()
@@ -28,24 +31,48 @@ namespace UnitTestProject1
             driver.Navigate().GoToUrl("https://orangehrm-demo-6x.orangehrmlive.com/auth/login");
             loginPage.LoginApplication("admin", "admin123");
 
-            var homePage = new HomePage(driver);
+            homePage = new HomePage(driver);
 
-            var coursesPage = homePage.NavigateToCoursesPage();
-
-            //var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
-            addCoursePage = coursesPage.NavigateToAddCoursePage();
+            coursesPage  = homePage.NavigateToCoursesPage();
 
         }
 
         [TestMethod]
-        public void Should_Display_Success_Toaster_For_Creating_New_Course()
+        public void Should_Display_One_Row_In_Table_After_Creating_New_Course()
         {
-            addCoursePage.AddCourse(new AddCourseBO());
-            //var successMessage = "Successfully Updatedd";
-            //var successToaster = By.ClassName("toast-success");
-            //Assert.AreEqual(successMessage, driver.FindElement(successToaster).Text);
+            addCoursePage = coursesPage.NavigateToAddCoursePage();
+            var title = "Test Title1";
+            addCoursePage.AddCourse(new AddCourseBO {
+                Title = title
+            });
+            coursesPage = homePage.NavigateToCoursesPage();
+            coursesPage.SearchFilter(title);
+
+            var tableRow = By.ClassName("dataRaw");
+            Thread.Sleep(2000);
+            var numberOfRows = driver.FindElements(tableRow);
+            var test = numberOfRows.Count;
+            Assert.AreEqual(numberOfRows.Count, 1);
 
         }
+
+      
+        //public void ZShould_Delete_Course()
+        //{
+        //    //driver.SwitchTo().DefaultContent();
+        //    driver.SwitchTo().Frame(driver.FindElement(By.Id("noncoreIframe")));
+        //    var title = "Test Title1";
+        //    coursesPage.SearchFilter(title);
+
+        //    Thread.Sleep(5000);
+        //    new WebDriverWait(driver, TimeSpan.FromSeconds(5000)).Until(ExpectedConditions.ElementExists((By.Id("frmList_ohrmListComponent_Menu"))));
+        //    driver.FindElement(By.Id("frmList_ohrmListComponent_Menu")).Click();
+        //    driver.FindElement(By.Id("frmList_ohrmListComponent_chkSelectAll")).Click();
+        //    driver.FindElement(By.Id("frmList_ohrmListComponent_Menu")).Click();
+        //    driver.FindElement(By.Id("deleteBtn")).Click();
+        //    driver.FindElement(By.Id("course-delete-button")).Click();
+        //    Thread.Sleep(5000);
+        //}
 
         [TestCleanup]
         public void CleanUp()
