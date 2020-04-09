@@ -27,13 +27,33 @@ namespace UnitTestProject1.PageObjects
 
         private IWebElement BtnTraining => driver.FindElement(By.Id("menu_training_defaultTrainingModulePage"));
         private IWebElement BtnCourses => driver.FindElement(By.Id("menu_training_viewCourseList"));
+        private IWebElement BtnOnBoarding => driver.FindElement(By.Id("menu_onboarding_defaultMenuView"));
+
+        private By sessions = By.Id("menu_training_viewSessionList");
+        private IWebElement BtnSessions => driver.FindElement(sessions);
+
+        private By taskTypes = By.Id("menu_onboarding_viewTaskTypes");
+        private IWebElement BtnTaskTypes => driver.FindElement(taskTypes);
 
         public CoursesPage NavigateToCoursesPage()
         {
             BtnTraining.Click();
             BtnCourses.Click();
             return new CoursesPage(driver);
-    
+        }
+
+        public TrainingSessionsPage NavigateToTrainingSessionsPage()
+        {
+            BtnTraining.Click();
+            BtnSessions.Click();
+            return new TrainingSessionsPage(driver);
+        }
+
+        public TaskTypesPage NavigatetoTaskTypesPage()
+        {
+            BtnOnBoarding.Click();
+            BtnTaskTypes.Click();
+            return new TaskTypesPage(driver);
         }
     }
 }

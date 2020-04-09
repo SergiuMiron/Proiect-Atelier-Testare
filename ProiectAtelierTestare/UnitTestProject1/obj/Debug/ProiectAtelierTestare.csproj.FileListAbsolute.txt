@@ -51,3 +51,5 @@ E:\SolutiiVS_testing\Proiect Nou\Proiect-Atelier-Testare\ProiectAtelierTestare\U
 E:\SolutiiVS_testing\Proiect Nou\Proiect-Atelier-Testare\ProiectAtelierTestare\UnitTestProject1\obj\Debug\UnitTestProject1.pdb
 C:\Users\Sergiu\Desktop\Faculty\Master-Anul 1 Semestrul 2\Atelier testare\Proiect-Atelier-Testare\ProiectAtelierTestare\UnitTestProject1\bin\Debug\WebDriver.Support.dll
 C:\Users\Sergiu\Desktop\Faculty\Master-Anul 1 Semestrul 2\Atelier testare\Proiect-Atelier-Testare\ProiectAtelierTestare\UnitTestProject1\bin\Debug\WebDriver.Support.xml
+E:\SolutiiVS_testing\Proiect Nou\Proiect-Atelier-Testare\ProiectAtelierTestare\UnitTestProject1\bin\Debug\WebDriver.Support.dll
+E:\SolutiiVS_testing\Proiect Nou\Proiect-Atelier-Testare\ProiectAtelierTestare\UnitTestProject1\bin\Debug\WebDriver.Support.xml
