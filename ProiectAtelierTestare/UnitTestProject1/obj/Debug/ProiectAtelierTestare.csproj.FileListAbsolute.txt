@@ -74,3 +74,6 @@ C:\Users\cociu\OneDrive\Desktop\PROIECT tEST\Proiect-Atelier-Testare\ProiectAtel
 C:\Users\cociu\OneDrive\Desktop\PROIECT tEST\Proiect-Atelier-Testare\ProiectAtelierTestare\UnitTestProject1\obj\Debug\UnitTestProject1.dll
 C:\Users\cociu\OneDrive\Desktop\PROIECT tEST\Proiect-Atelier-Testare\ProiectAtelierTestare\UnitTestProject1\obj\Debug\UnitTestProject1.pdb
 >>>>>>> 2ee803e25237a176e666331b47338252748a30f7
+C:\Users\marci\Desktop\New folder (3)\Proiect-Atelier-Testare\ProiectAtelierTestare\UnitTestProject1\obj\Debug\ProiectAtelierTestare.csprojAssemblyReference.cache
+C:\Users\marci\Desktop\New folder (3)\Proiect-Atelier-Testare\ProiectAtelierTestare\UnitTestProject1\obj\Debug\UnitTestProject1.dll
+C:\Users\marci\Desktop\New folder (3)\Proiect-Atelier-Testare\ProiectAtelierTestare\UnitTestProject1\obj\Debug\UnitTestProject1.pdb

@@ -11,6 +11,7 @@ using ExpectedConditions = SeleniumExtras.WaitHelpers.ExpectedConditions;
 namespace UnitTestProject1.PageObjects
 {
     public class HomePage
+        ////test
     {
         private IWebDriver driver;
         public LoggedInMenuItemControl menuItemControl => new LoggedInMenuItemControl(driver);
@@ -74,7 +75,8 @@ namespace UnitTestProject1.PageObjects
             BtnSD.Click();
             BtnIDP.Click();
             return new IDPPage(driver);
-
+            
         }
     }
+
 }
