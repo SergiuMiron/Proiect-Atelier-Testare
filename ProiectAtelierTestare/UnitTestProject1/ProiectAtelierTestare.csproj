@@ -65,18 +65,32 @@
     <Compile Include="LoginTests.cs" />
     <Compile Include="PageObjects\AddCourse\AddCourseBO.cs" />
     <Compile Include="PageObjects\AddCourse\AddCoursePage.cs" />
+<<<<<<< HEAD
     <Compile Include="PageObjects\AddTaskType\AddTaskTypeBO.cs" />
     <Compile Include="PageObjects\AddTaskType\AddTaskTypePage.cs" />
     <Compile Include="PageObjects\AddTrainingSession\AddTrainingSessionBO.cs" />
     <Compile Include="PageObjects\AddTrainingSession\AddTrainingSessionPage.cs" />
+=======
+    <Compile Include="PageObjects\AddEvent\AddEventBO.cs" />
+    <Compile Include="PageObjects\AddEvent\AddEventPage.cs" />
+    <Compile Include="PageObjects\AddIDP\AddIDPBO.cs" />
+    <Compile Include="PageObjects\AddIDP\AddIDPPage.cs" />
+>>>>>>> 2ee803e25237a176e666331b47338252748a30f7
     <Compile Include="PageObjects\Controllers\MenuItemControl.cs" />
     <Compile Include="PageObjects\CoursesPage.cs" />
+    <Compile Include="PageObjects\EventsPage.cs" />
     <Compile Include="PageObjects\HomePage.cs" />
+    <Compile Include="PageObjects\IDPPage.cs" />
     <Compile Include="PageObjects\LoginPage.cs" />
     <Compile Include="PageObjects\TaskTypesPage.cs" />
     <Compile Include="PageObjects\TrainingSessionsPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
     <Compile Include="TaskTypeTest.cs" />
+=======
+    <Compile Include="AddEventsTest.cs" />
+    <Compile Include="AddIDPTest.cs" />
+>>>>>>> 2ee803e25237a176e666331b47338252748a30f7
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

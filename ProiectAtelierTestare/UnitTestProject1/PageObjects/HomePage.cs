@@ -35,6 +35,13 @@ namespace UnitTestProject1.PageObjects
         private By taskTypes = By.Id("menu_onboarding_viewTaskTypes");
         private IWebElement BtnTaskTypes => driver.FindElement(taskTypes);
 
+        private IWebElement BtnOnBording => driver.FindElement(By.Id("menu_onboarding_defaultMenuView"));
+        private IWebElement BtnEvents => driver.FindElement(By.Id("menu_onboarding_viewJobs"));
+
+
+        private IWebElement BtnSD => driver.FindElement(By.Id("menu_succession & development_Succession&Development"));
+        private IWebElement BtnIDP => driver.FindElement(By.Id("menu_succession & development_individualDevelopmentPlans"));
+
         public CoursesPage NavigateToCoursesPage()
         {
             BtnTraining.Click();
@@ -54,6 +61,20 @@ namespace UnitTestProject1.PageObjects
             BtnOnBoarding.Click();
             BtnTaskTypes.Click();
             return new TaskTypesPage(driver);
+        }
+        public EventsPage NavigateToEventsPage()
+        {
+            BtnOnBording.Click();
+            BtnEvents.Click();
+            return new EventsPage(driver);
+
+        }
+        public IDPPage NavigateToIDPPage()
+        {
+            BtnSD.Click();
+            BtnIDP.Click();
+            return new IDPPage(driver);
+
         }
     }
 }
