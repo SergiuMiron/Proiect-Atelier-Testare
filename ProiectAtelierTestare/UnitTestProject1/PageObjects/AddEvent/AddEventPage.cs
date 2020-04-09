@@ -50,7 +50,7 @@ namespace UnitTestProject1.PageObjects.AddEvent
             driver.FindElements(By.ClassName("ac_even ac_over"))[0].Click();
 
             Location.SendKeys(events.Location);
-            driver.FindElements(By.ClassName("btn-flat picker__today"))[0].Click();
+            driver.FindElements(By.XPath("iframe#noncoreIframe //span[contains(text(), 'Australian Regional HQ')]"))[0].Click();
 
 
             SaveButton.Click();
