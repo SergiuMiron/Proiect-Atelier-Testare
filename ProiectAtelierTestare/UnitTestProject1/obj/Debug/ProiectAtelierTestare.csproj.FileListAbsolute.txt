@@ -51,6 +51,10 @@ E:\SolutiiVS_testing\Proiect Nou\Proiect-Atelier-Testare\ProiectAtelierTestare\U
 E:\SolutiiVS_testing\Proiect Nou\Proiect-Atelier-Testare\ProiectAtelierTestare\UnitTestProject1\obj\Debug\UnitTestProject1.pdb
 C:\Users\Sergiu\Desktop\Faculty\Master-Anul 1 Semestrul 2\Atelier testare\Proiect-Atelier-Testare\ProiectAtelierTestare\UnitTestProject1\bin\Debug\WebDriver.Support.dll
 C:\Users\Sergiu\Desktop\Faculty\Master-Anul 1 Semestrul 2\Atelier testare\Proiect-Atelier-Testare\ProiectAtelierTestare\UnitTestProject1\bin\Debug\WebDriver.Support.xml
+<<<<<<< HEAD
+E:\SolutiiVS_testing\Proiect Nou\Proiect-Atelier-Testare\ProiectAtelierTestare\UnitTestProject1\bin\Debug\WebDriver.Support.dll
+E:\SolutiiVS_testing\Proiect Nou\Proiect-Atelier-Testare\ProiectAtelierTestare\UnitTestProject1\bin\Debug\WebDriver.Support.xml
+=======
 C:\Users\cociu\OneDrive\Desktop\PROIECT tEST\Proiect-Atelier-Testare\ProiectAtelierTestare\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
 C:\Users\cociu\OneDrive\Desktop\PROIECT tEST\Proiect-Atelier-Testare\ProiectAtelierTestare\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
 C:\Users\cociu\OneDrive\Desktop\PROIECT tEST\Proiect-Atelier-Testare\ProiectAtelierTestare\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
@@ -69,3 +73,4 @@ C:\Users\cociu\OneDrive\Desktop\PROIECT tEST\Proiect-Atelier-Testare\ProiectAtel
 C:\Users\cociu\OneDrive\Desktop\PROIECT tEST\Proiect-Atelier-Testare\ProiectAtelierTestare\UnitTestProject1\obj\Debug\ProiectAtelierTestare.csproj.CopyComplete
 C:\Users\cociu\OneDrive\Desktop\PROIECT tEST\Proiect-Atelier-Testare\ProiectAtelierTestare\UnitTestProject1\obj\Debug\UnitTestProject1.dll
 C:\Users\cociu\OneDrive\Desktop\PROIECT tEST\Proiect-Atelier-Testare\ProiectAtelierTestare\UnitTestProject1\obj\Debug\UnitTestProject1.pdb
+>>>>>>> 2ee803e25237a176e666331b47338252748a30f7
