@@ -60,14 +60,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddCoursesTest.cs" />
+    <Compile Include="AddDisciplinaryCaseTest.cs" />
     <Compile Include="CoursesTest.cs" />
     <Compile Include="LoginTests.cs" />
     <Compile Include="PageObjects\AddCourse\AddCourseBO.cs" />
     <Compile Include="PageObjects\AddCourse\AddCoursePage.cs" />
+    <Compile Include="PageObjects\AddDisciplinaryCase\AddDisciplinaryCasesPage.cs" />
+    <Compile Include="PageObjects\AddDisciplinaryCase\AddDisciplnaryCasesBO.cs" />
     <Compile Include="PageObjects\AddEvent\AddEventBO.cs" />
     <Compile Include="PageObjects\AddEvent\AddEventPage.cs" />
     <Compile Include="PageObjects\AddIDP\AddIDPBO.cs" />
     <Compile Include="PageObjects\AddIDP\AddIDPPage.cs" />
+    <Compile Include="PageObjects\DisciplinaryCasesPage.cs" />
     <Compile Include="PageObjects\Controllers\MenuItemControl.cs" />
     <Compile Include="PageObjects\CoursesPage.cs" />
     <Compile Include="PageObjects\EventsPage.cs" />
