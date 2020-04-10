@@ -11,6 +11,7 @@ using ExpectedConditions = SeleniumExtras.WaitHelpers.ExpectedConditions;
 namespace UnitTestProject1.PageObjects
 {
     public class HomePage
+        ////test
     {
         private IWebDriver driver;
         public LoggedInMenuItemControl menuItemControl => new LoggedInMenuItemControl(driver);
@@ -42,6 +43,8 @@ namespace UnitTestProject1.PageObjects
         private IWebElement BtnSD => driver.FindElement(By.Id("menu_succession & development_Succession&Development"));
         private IWebElement BtnIDP => driver.FindElement(By.Id("menu_succession & development_individualDevelopmentPlans"));
 
+        private IWebElement BtnDiscipline => driver.FindElement(By.Id("menu_discipline_defaultDisciplinaryView"));
+        private IWebElement BtnDisciplinaryCases => driver.FindElement(By.Id("menu_discipline_viewDisciplinaryCases"));
         public CoursesPage NavigateToCoursesPage()
         {
             BtnTraining.Click();
@@ -74,7 +77,15 @@ namespace UnitTestProject1.PageObjects
             BtnSD.Click();
             BtnIDP.Click();
             return new IDPPage(driver);
+            
+        }
 
+        public DisciplinaryCasesPage NavigateToDisciplinaryCasesPage()
+        {
+            BtnDiscipline.Click();
+            BtnDisciplinaryCases.Click();
+            return new DisciplinaryCasesPage(driver);
         }
     }
+
 }
