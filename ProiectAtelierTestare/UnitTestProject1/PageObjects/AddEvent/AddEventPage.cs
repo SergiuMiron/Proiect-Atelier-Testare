@@ -81,7 +81,7 @@ namespace UnitTestProject1.PageObjects.AddEvent
             //wait.Until(ExpectedConditions.ElementIsVisible(dropdownOptions));
             //driver.FindElements(dropdownOptions)[3].Click();
 
-            Thread.Sleep(12000);
+            Thread.Sleep(6000);
         }
     }
 }
