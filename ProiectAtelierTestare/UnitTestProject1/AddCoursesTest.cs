@@ -49,7 +49,7 @@ namespace UnitTestProject1
             coursesPage.SearchFilter(title);
 
             var tableRow = By.ClassName("dataRaw");
-            //Thread.Sleep(2000);
+            Thread.Sleep(2000);
             var numberOfRows = driver.FindElements(tableRow);
             var test = numberOfRows.Count;
 

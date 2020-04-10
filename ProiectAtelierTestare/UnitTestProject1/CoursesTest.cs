@@ -54,12 +54,12 @@ namespace UnitTestProject1
             // Check if the entity was deleted
             coursesPage.SearchFilter(title);
             var tableRow = By.ClassName("dataRaw");
-            Thread.Sleep(2000);
+            Thread.Sleep(2000); // i've tried with elementIsClickable, ElementsExists 
+                                 //  and other functions from expected conditions, none of them worked because the element
+                                 //   is in DOM already, the problem is with the search filter that is executing too slow
             var numberOfRows = driver.FindElements(tableRow);
             var test = numberOfRows.Count;
             Assert.AreEqual(numberOfRows.Count, 0);
-
-            Thread.Sleep(5000);
         }
 
 
