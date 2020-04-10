@@ -34,13 +34,13 @@ namespace UnitTestProject1.PageObjects.AddIDP
 
         public void AddIDP(AddIDPBO course)
         {
-            
+
             Employee.SendKeys(course.Employee);
             driver.FindElements(By.ClassName("angucomplete-title"))[0].Click();
 
             Coach.SendKeys(course.Coach);
             driver.FindElements(By.ClassName("angucomplete-row angucomplete-selected-row"))[0].Click();
-      
+
             Description.SendKeys(course.Description);
 
             SaveButton.Click();

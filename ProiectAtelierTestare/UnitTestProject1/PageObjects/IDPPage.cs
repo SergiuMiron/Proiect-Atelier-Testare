@@ -15,7 +15,7 @@ namespace UnitTestProject1.PageObjects
     {
         private IWebDriver driver;
         //private By addButton = By.XPath("//div[contains(@class, 'fixed-action-btn')]");
-        private By addButton = By.Id("acac3985-2819-c64e-3384-b60af806b676");
+        private By addButton = By.CssSelector("[a.btn-floating > i.material-icons]");
 
 
         public IDPPage(IWebDriver browser)

@@ -46,12 +46,12 @@ namespace UnitTestProject1
             //Assert.AreEqual(successMessage, driver.FindElement(successToaster).Text);
 
         }
-
+        
         [TestCleanup]
         public void CleanUp()
         {
             driver.Quit();
         }
-
+        
     }
 }
