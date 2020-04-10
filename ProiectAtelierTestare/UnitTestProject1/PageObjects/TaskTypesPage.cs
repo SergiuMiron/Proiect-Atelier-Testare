@@ -16,12 +16,12 @@ namespace UnitTestProject1.PageObjects
         private By newTaskType = By.Id("addItemBtn");
         private By chkList = By.Id("checkbox_ohrmList_chkSelectRecord_13");
         private By dotsActions = By.Id("frmList_ohrmListComponent_Menu");
-        private By delete = By.Id("deleteTaskTypes");
-        private By popDeleteAction = By.Id("modal-delete-session");
-        private By confirmDelete = By.Id("task-delete-button");
+        private By selectAll = By.Id("frmList_ohrmListComponent_chkSelectAll");
+        private By popDeleteAction = By.Id("deleteTaskTypes");
+        private By confirmDelete = By.Id("task-delete-cancel-button");
         private By notice = By.ClassName("toast-message");
 
-        public TaskTypesPage (IWebDriver browser)
+        public TaskTypesPage(IWebDriver browser)
         {
             driver = browser;
             var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
@@ -41,9 +41,10 @@ namespace UnitTestProject1.PageObjects
             driver.SwitchTo().Frame(driver.FindElement(By.Id("noncoreIframe")));
             var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
             wait.Until(ExpectedConditions.ElementIsVisible(dotsActions));
-            driver.FindElement(chkList).Click();
             driver.FindElement(dotsActions).Click();
-            driver.FindElement(delete).Click();
+            driver.FindElement(selectAll).Click();
+            driver.FindElement(dotsActions).Click();
+            driver.FindElement(popDeleteAction).Click();
             driver.FindElement(confirmDelete).Click();
         }
     }

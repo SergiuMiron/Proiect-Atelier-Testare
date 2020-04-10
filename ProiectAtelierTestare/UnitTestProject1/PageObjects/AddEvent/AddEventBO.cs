@@ -10,9 +10,9 @@ namespace UnitTestProject1.PageObjects.AddEvent
     {
         public string Name { get; set; } = "Test Name";
         public string Date = "";
-        public string Participant = "Mike Mathews";
+        public string Participant = "0088";
         public string Owner = "Odis Adalwin";
-        public string Location = "";
-    
+        //public string Location = "";
+
     }
 }

@@ -32,18 +32,21 @@ namespace UnitTestProject1
 
             var eventsPage = homePage.NavigateToEventsPage();
 
-            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
+            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(1));
             addEventPage = eventsPage.NavigateToAddEventsPage();
+
 
         }
 
         [TestMethod]
-        public void Should_Display_Success_Toaster_For_Creating_New_Event()
+        public void Should_Display_EditButton_For_New_Event()
         {
             addEventPage.AddEvent(new AddEventBO());
-            //var successMessage = "Successfully Updatedd";
-            //var successToaster = By.ClassName("toast-success");
-            //Assert.AreEqual(successMessage, driver.FindElement(successToaster).Text);
+            
+               var successMessage = "Edit";
+               var successBtn = By.Id("createButton");
+               Assert.AreEqual(successMessage, driver.FindElement(successBtn).Text);
+              
 
         }
 

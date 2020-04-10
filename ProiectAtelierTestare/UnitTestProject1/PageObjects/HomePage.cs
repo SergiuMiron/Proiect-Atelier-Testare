@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using UnitTestProject1.PageObjects.Controllers;
 using OpenQA.Selenium.Support.UI;
 using ExpectedConditions = SeleniumExtras.WaitHelpers.ExpectedConditions;
+using System.Threading;
 
 namespace UnitTestProject1.PageObjects
 {
@@ -22,6 +23,19 @@ namespace UnitTestProject1.PageObjects
             var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(2));
             wait.Until(ExpectedConditions.ElementIsVisible(userName));
         }
+        private IWebElement PIM => driver.FindElement(By.Id("menu_pim_viewPimModule"));
+        private IWebElement BtnEmployee => driver.FindElement(By.Id("menu_pim_viewEmployeeList"));
+
+        private IWebElement BtnOnBording => driver.FindElement(By.Id("menu_onboarding_defaultMenuView"));
+        private IWebElement BtnEvents => driver.FindElement(By.Id("menu_onboarding_viewJobs"));
+
+
+        private IWebElement BtnSD => driver.FindElement(By.Id("menu_succession & development_Succession&Development"));
+        private IWebElement BtnIDP => driver.FindElement(By.Id("menu_succession & development_individualDevelopmentPlans"));
+
+        private IWebElement BtnAdmin => driver.FindElement(By.Id("menu_admin_viewAdminModule"));
+        private IWebElement BtnJob => driver.FindElement(By.Id("menu_admin_Job"));
+        private IWebElement BtnPay => driver.FindElement(By.Id("menu_admin_viewPayGrades"));
 
         private By userName = By.Id("account-name");
         private IWebElement btnUser => driver.FindElement(userName);
@@ -36,15 +50,11 @@ namespace UnitTestProject1.PageObjects
         private By taskTypes = By.Id("menu_onboarding_viewTaskTypes");
         private IWebElement BtnTaskTypes => driver.FindElement(taskTypes);
 
-        private IWebElement BtnOnBording => driver.FindElement(By.Id("menu_onboarding_defaultMenuView"));
-        private IWebElement BtnEvents => driver.FindElement(By.Id("menu_onboarding_viewJobs"));
-
-
-        private IWebElement BtnSD => driver.FindElement(By.Id("menu_succession & development_Succession&Development"));
-        private IWebElement BtnIDP => driver.FindElement(By.Id("menu_succession & development_individualDevelopmentPlans"));
-
+       
         private IWebElement BtnDiscipline => driver.FindElement(By.Id("menu_discipline_defaultDisciplinaryView"));
         private IWebElement BtnDisciplinaryCases => driver.FindElement(By.Id("menu_discipline_viewDisciplinaryCases"));
+       
+        
         public CoursesPage NavigateToCoursesPage()
         {
             BtnTraining.Click();
@@ -85,6 +95,23 @@ namespace UnitTestProject1.PageObjects
             BtnDiscipline.Click();
             BtnDisciplinaryCases.Click();
             return new DisciplinaryCasesPage(driver);
+        }
+       
+        public PaysPage NavigateToPaysPage()
+        {
+            BtnAdmin.Click();
+            BtnJob.Click();
+            Thread.Sleep(2000);
+            BtnPay.Click();
+            return new PaysPage(driver);
+
+        }
+        public EmployeesPage NavigateToAddEmployeePage()
+        {
+            PIM.Click();
+            BtnEmployee.Click();
+
+            return new EmployeesPage(driver);
         }
     }
 

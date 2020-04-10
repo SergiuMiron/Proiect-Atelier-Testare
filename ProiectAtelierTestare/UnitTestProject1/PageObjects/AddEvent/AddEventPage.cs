@@ -24,13 +24,13 @@ namespace UnitTestProject1.PageObjects.AddEvent
         private By addEvent_name = By.Id("OhrmJob_name");
         private IWebElement Name => driver.FindElement(addEvent_name);
 
-        private IWebElement Location => driver.FindElement(By.Id("addCourse_coordinator_empName"));
+        private IWebElement Location => driver.FindElement(By.CssSelector("input[type='text'].select-dropdown"));
 
         private IWebElement Date => driver.FindElement(By.Id("jobDueDate_root"));
 
         private IWebElement Participant => driver.FindElement(By.Id("OhrmJob_newHires"));
 
-        private IWebElement  Owner => driver.FindElement(By.Id("OhrmJob_owners"));
+        private IWebElement Owner => driver.FindElement(By.Id("OhrmJob_owners"));
 
         private IWebElement SaveButton => driver.FindElement(By.Id("createButton"));
 
@@ -39,18 +39,23 @@ namespace UnitTestProject1.PageObjects.AddEvent
         public void AddEvent(AddEventBO events)
         {
             Name.SendKeys(events.Name);
-            
-            Date.SendKeys(events.Date);
-            driver.FindElements(By.ClassName("btn-flat picker__today"))[0].Click();
 
+            //Location.SendKeys(events.Location);
+            //Location.SendKeys(Keys.Tab);
+            Location.SendKeys(Keys.ArrowDown);
+            Location.SendKeys(Keys.Enter);
+
+            Date.SendKeys(events.Date);
+            driver.FindElements(By.XPath("//button[contains(text(), 'Today')]"))[0].Click();
+
+            Thread.Sleep(1000);
             Participant.SendKeys(events.Participant);
-            driver.FindElements(By.ClassName("ac_even ac_over"))[0].Click();
+            //driver.FindElements(By.ClassName("ac_even ac_over"))[0].Click();
+            Participant.SendKeys(Keys.Tab);
 
             Owner.SendKeys(events.Owner);
-            driver.FindElements(By.ClassName("ac_even ac_over"))[0].Click();
-
-            Location.SendKeys(events.Location);
-            driver.FindElements(By.XPath("iframe#noncoreIframe //span[contains(text(), 'Australian Regional HQ')]"))[0].Click();
+            //driver.FindElements(By.ClassName("ac_even ac_over"))[0].Click();
+            Owner.SendKeys(Keys.Enter);
 
 
             SaveButton.Click();
@@ -76,7 +81,7 @@ namespace UnitTestProject1.PageObjects.AddEvent
             //wait.Until(ExpectedConditions.ElementIsVisible(dropdownOptions));
             //driver.FindElements(dropdownOptions)[3].Click();
 
-            Thread.Sleep(12000);
+            Thread.Sleep(6000);
         }
     }
 }
