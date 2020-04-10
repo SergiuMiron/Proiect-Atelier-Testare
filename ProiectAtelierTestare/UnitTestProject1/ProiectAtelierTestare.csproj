@@ -61,6 +61,7 @@
   <ItemGroup>
     <Compile Include="AddCoursesTest.cs" />
     <Compile Include="AddDisciplinaryCaseTest.cs" />
+    <Compile Include="DisciplinaryCaseTest.cs" />
     <Compile Include="CoursesTest.cs" />
     <Compile Include="LoginTests.cs" />
     <Compile Include="PageObjects\AddCourse\AddCourseBO.cs" />

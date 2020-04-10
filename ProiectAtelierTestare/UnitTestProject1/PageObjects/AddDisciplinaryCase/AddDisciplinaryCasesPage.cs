@@ -39,6 +39,16 @@ namespace UnitTestProject1.PageObjects
 
         }
 
+        public void AddDisciplinaryCases2(string name, string casename)
+       { var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(2));
+            wait.Until(ExpectedConditions.ElementExists(addEmpName));
+            Employee.SendKeys(name);
+            Case.SendKeys(casename);
+            SaveBtn.Click();
+        }
 
-    }
+     }
+
+
 }
+
