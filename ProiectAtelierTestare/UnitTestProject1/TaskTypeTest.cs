@@ -39,7 +39,7 @@ namespace UnitTestProject1
         {
             tasksPage.DeleteTask();
             //string notice = "Successfully Deleted";
-            //Assert.AreEqual(notice, tasksPage.no)
+            //Assert.AreEqual(notice, tasksPage.);
         }
     }
 }

@@ -47,5 +47,14 @@ namespace UnitTestProject1.PageObjects
             driver.FindElement(deleteTrainingSession).Click();
             driver.FindElement(confirmDelete).Click();
         }
+
+        public void SearchFilter(string titleName)
+        {
+            var searchModal = By.Id("searchModal");
+            driver.FindElement(searchModal).Click();
+            driver.FindElement(By.Id("searchSession_name")).SendKeys(titleName);
+            var searchButton = By.Id("searchBtn");
+            driver.FindElement(searchButton).Click();
+        }
     }
 }

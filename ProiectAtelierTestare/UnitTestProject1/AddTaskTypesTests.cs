@@ -38,8 +38,22 @@ namespace UnitTestProject1
         public void Display_Correct_Message_For_Creating_New_TaskType()
         {
             addTaskTypePage.AddTaskType(new AddTaskTypeBO());
-            var message = "Successfully Updated";
-            Assert.AreEqual(message, addTaskTypePage.SuccessMessage.Text);
+            //var message = "Successfully Updated";
+            //Assert.AreEqual(message, addTaskTypePage.SuccessMessage.Text);
+        }
+
+        [TestMethod]
+        public void Display_Error_Message_For_Required_Fields()
+        {
+            var taskName = "";
+            addTaskTypePage.AddTaskType(new AddTaskTypeBO
+            {
+                Name = taskName
+            });
+            var message = "Required";
+            var errorMessage = driver.FindElement(By.Id("type_name-error")).Text;
+            Assert.AreEqual(message, errorMessage);
+
         }
 
         [TestCleanup]

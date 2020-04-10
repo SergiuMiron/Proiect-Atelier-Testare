@@ -24,8 +24,11 @@ namespace UnitTestProject1.PageObjects.AddTrainingSession
         private By sessionName = By.Id("addSession_name");
         private IWebElement TxtSessionName => driver.FindElement(sessionName);
         private IWebElement BtnCourse => driver.FindElement(By.ClassName("select-dropdown"));
-        private IWebElement coursesList => driver.FindElement(By.Id("select-options-b2ff0959-8b41-9c31-0d2d-dc95fe712c52"));
+        private By coursesList => By.ClassName("select-dropdown");
+        //private IWebElement coursesList => driver.FindElement(By.CssSelector(".row > .row:nth-of-type(1) > .input-field.col.s6:nth-of-type(2) > .select-wrapper > input[type='text'].select-dropdown"));
+        private IWebElement elementTest => driver.FindElement(By.XPath("//span['How to avoid phishing attacks']"));
         private IWebElement TxtStartDate => driver.FindElement(By.Id("addSession_scheduledDate"));
+        private IWebElement btnToday => driver.FindElement(By.XPath("//button[@class='btn-flat picker__today']"));
         private IWebElement TxtEndDate => driver.FindElement(By.Id("addSession_dueDate"));
         private IWebElement TxtDeliveryLocation => driver.FindElement(By.Id("addSession_deliveryLocation"));
         private IWebElement DdlDeliveryMethod => driver.FindElement(By.XPath("//select[@name='addSession[deliveryMethod]']"));
@@ -36,24 +39,25 @@ namespace UnitTestProject1.PageObjects.AddTrainingSession
         {
             TxtSessionName.SendKeys(sessionTraining.TxtSessionName);
             BtnCourse.Click();
-            var selectCourse = new SelectElement(coursesList);
-            selectCourse.SelectByText(sessionTraining.TxtCourseName);
+            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
+            wait.Until(ExpectedConditions.ElementIsVisible(coursesList));
+            elementTest.Click();
+            //driver.FindElement(coursesList).Click();
+            //coursesList.Click();
+            //var selectCourse = new SelectElement(coursesList);
+            //selectCourse.SelectByText(sessionTraining.TxtCourseName);
 
-            TxtStartDate.SendKeys(sessionTraining.TxtStartDay);
-            TxtStartDate.SendKeys(sessionTraining.TxtStartMonth);
-            TxtStartDate.SendKeys(Keys.Tab);
-            TxtStartDate.SendKeys(sessionTraining.TxtStartYear);
+            TxtStartDate.Click();
+            btnToday.Click();
+            //TxtEndDate.Click();
+            //btnToday.Click();
 
-            TxtEndDate.SendKeys(sessionTraining.TxtEndDay);
-            TxtEndDate.SendKeys(sessionTraining.TxtEndMonth);
-            TxtEndDate.SendKeys(Keys.Tab);
-            TxtEndDate.SendKeys(sessionTraining.TxtEndYear);
 
-            TxtDeliveryLocation.SendKeys(sessionTraining.TxtDeliveryLocation);
-            var selectDeliveryMethod = new SelectElement(DdlDeliveryMethod);
-            selectDeliveryMethod.SelectByText(sessionTraining.TxtDeliveryMethod);
-            var selectStatus = new SelectElement(DdlStatus);
-            selectStatus.SelectByText(sessionTraining.TxtStatus);
+            //TxtDeliveryLocation.SendKeys(sessionTraining.TxtDeliveryLocation);
+            //var selectDeliveryMethod = new SelectElement(DdlDeliveryMethod);
+            //selectDeliveryMethod.SelectByText(sessionTraining.TxtDeliveryMethod);
+            //var selectStatus = new SelectElement(DdlStatus);
+            //selectStatus.SelectByText(sessionTraining.TxtStatus);
             BtnSave.Click();
         }
 
