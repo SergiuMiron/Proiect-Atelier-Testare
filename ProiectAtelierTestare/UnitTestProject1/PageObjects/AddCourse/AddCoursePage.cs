@@ -26,7 +26,13 @@ namespace UnitTestProject1.PageObjects.AddCourse
 
         private IWebElement Coordinator => driver.FindElement(By.Id("addCourse_coordinator_empName"));
 
-        private IWebElement Subunit => driver.FindElement(By.Id("addCourse_subunit"));
+        private IWebElement Subunit => driver.FindElements(By.ClassName("select-dropdown"))[0];
+
+        private IWebElement Version => driver.FindElements(By.ClassName("select-dropdown"))[2];
+
+        private IWebElement Subversion => driver.FindElements(By.ClassName("select-dropdown"))[4];
+
+        private IWebElement Currency => driver.FindElements(By.ClassName("select-dropdown"))[6];
 
         private IWebElement Cost => driver.FindElement(By.Id("addCourse_cost"));
 
@@ -46,35 +52,29 @@ namespace UnitTestProject1.PageObjects.AddCourse
             Coordinator.SendKeys(course.Coordinator);
             driver.FindElements(By.ClassName("ac_results"))[0].Click();
 
+            Subunit.Click();
+            Subunit.SendKeys(Keys.ArrowDown);
+            Subunit.SendKeys(Keys.Enter);
+
+            Version.Click();
+            Version.SendKeys(Keys.ArrowDown);
+            Version.SendKeys(Keys.Enter);
+
+            Subversion.Click();
+            Subversion.SendKeys(Keys.ArrowDown);
+            Subversion.SendKeys(Keys.Enter);
+
+            Currency.Click();
+            Currency.SendKeys(Keys.ArrowDown);
+            Currency.SendKeys(Keys.Enter);
+
+
             Cost.SendKeys(course.Cost);
             Company.SendKeys(course.Company);
             Duration.SendKeys(course.Duration);
             Description.SendKeys(course.Description);
 
             SaveButton.Click();
-
-            //var selectSubunit = new SelectElement(Subunit);
-            //selectSubunit.SelectByText("Architecture Team");
-
-            //driver.FindElements(By.ClassName("select-dropdown"))[0].Click();
-            //var dropdownOption = By.XPath("//span[text()='Architecture Team']");
-            //var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
-            //wait.Until(ExpectedConditions.ElementIsVisible(dropdownOption));
-            //driver.FindElement(dropdownOption).SendKeys("Architecture Team");
-            
-            //driver.FindElement(dropdownOption).Click();
-
-            //var dropdownOption = By.CssSelector("li:nth-child(2)");
-            //var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
-            //wait.Until(ExpectedConditions.ElementIsVisible(dropdownOption));
-            //driver.FindElement(dropdownOption).Click();
-
-            //var dropdownOptions = By.ClassName("dropdown-content");
-            //var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(2));
-            //wait.Until(ExpectedConditions.ElementIsVisible(dropdownOptions));
-            //driver.FindElements(dropdownOptions)[3].Click();
-
-            Thread.Sleep(5000);
         }
     }
 }

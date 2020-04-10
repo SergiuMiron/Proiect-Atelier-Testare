@@ -49,32 +49,29 @@ namespace UnitTestProject1
             coursesPage.SearchFilter(title);
 
             var tableRow = By.ClassName("dataRaw");
-            Thread.Sleep(2000);
+            //Thread.Sleep(2000);
             var numberOfRows = driver.FindElements(tableRow);
             var test = numberOfRows.Count;
+
+            // Delete this entity, just for cleanup
+            coursesPage.DeleteCourse(title);
+
             Assert.AreEqual(numberOfRows.Count, 1);
 
         }
 
-      
-        //public void ZShould_Delete_Course()
-        //{
-        //    //driver.SwitchTo().DefaultContent();
-        //    driver.SwitchTo().Frame(driver.FindElement(By.Id("noncoreIframe")));
-        //    var title = "Test Title1";
-        //    coursesPage.SearchFilter(title);
 
-        //    Thread.Sleep(5000);
-        //    new WebDriverWait(driver, TimeSpan.FromSeconds(5000)).Until(ExpectedConditions.ElementExists((By.Id("frmList_ohrmListComponent_Menu"))));
-        //    driver.FindElement(By.Id("frmList_ohrmListComponent_Menu")).Click();
-        //    driver.FindElement(By.Id("frmList_ohrmListComponent_chkSelectAll")).Click();
-        //    driver.FindElement(By.Id("frmList_ohrmListComponent_Menu")).Click();
-        //    driver.FindElement(By.Id("deleteBtn")).Click();
-        //    driver.FindElement(By.Id("course-delete-button")).Click();
-        //    Thread.Sleep(5000);
-        //}
+        [TestMethod]
+        public void Should_Display_Required_Message_Error()
+        {
+            addCoursePage = coursesPage.NavigateToAddCoursePage();
+            driver.FindElement(By.Id("btnSaveCourse")).Click();
+            Boolean isRequired = driver.FindElements(By.Id("addCourse_coordinator_empName-error")).Count() > 0;
+            Assert.IsTrue(isRequired);
 
-        [TestCleanup]
+        }
+
+    [TestCleanup]
         public void CleanUp()
         {
             driver.Quit();
