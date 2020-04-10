@@ -68,15 +68,24 @@
     <Compile Include="PageObjects\AddEvent\AddEventPage.cs" />
     <Compile Include="PageObjects\AddIDP\AddIDPBO.cs" />
     <Compile Include="PageObjects\AddIDP\AddIDPPage.cs" />
+	<Compile Include="PageObjects\AddTrainingSession\AddTrainingSessionBO.cs" />
+    <Compile Include="PageObjects\AddTrainingSession\AddTrainingSessionPage.cs" />
+	<Compile Include="PageObjects\AddTaskType\AddTaskTypeBO.cs" />
+    <Compile Include="PageObjects\AddTaskType\AddTaskTypePage.cs" />
     <Compile Include="PageObjects\Controllers\MenuItemControl.cs" />
     <Compile Include="PageObjects\CoursesPage.cs" />
     <Compile Include="PageObjects\EventsPage.cs" />
     <Compile Include="PageObjects\HomePage.cs" />
     <Compile Include="PageObjects\IDPPage.cs" />
     <Compile Include="PageObjects\LoginPage.cs" />
+	<Compile Include="PageObjects\TrainingSessionsPage.cs" />
+	<Compile Include="PageObjects\TaskTypesPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AddEventsTest.cs" />
     <Compile Include="AddIDPTest.cs" />
+	<Compile Include="AddTaskTypesTests.cs" />
+	<Compile Include="AddTrainingSessionsTests.cs" />
+	<Compile Include="TaskTypeTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

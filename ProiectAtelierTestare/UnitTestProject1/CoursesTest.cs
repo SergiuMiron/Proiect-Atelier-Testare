@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using UnitTestProject1.PageObjects;
 using UnitTestProject1.PageObjects.AddCourse;
+using ExpectedConditions = SeleniumExtras.WaitHelpers.ExpectedConditions;
 
 namespace UnitTestProject1
 {
@@ -36,21 +38,30 @@ namespace UnitTestProject1
         [TestMethod]
         public void Should_Delete_Course()
         {
+            var wait = new WebDriverWait(driver, TimeSpan.FromMinutes(1));
+            var title = "Test1 To Be Deleted";
+
+            // Add an entity. We are going to delete it in this test
             addCoursePage = coursesPage.NavigateToAddCoursePage();
-            var title = "Test";
             addCoursePage.AddCourse(new AddCourseBO
             {
                 Title = title
             });
-            coursesPage = homePage.NavigateToCoursesPage();
+
+            // Delete the entity that we've just added
+            coursesPage.DeleteCourse(title);
+
+            // Check if the entity was deleted
             coursesPage.SearchFilter(title);
-            //driver.FindElement(By.Id("frmList_ohrmListComponent_Menu")).Click();
-            //driver.FindElement(By.Id("frmList_ohrmListComponent_chkSelectAll")).Click();
-            //driver.FindElement(By.Id("frmList_ohrmListComponent_Menu")).Click();
-            //driver.FindElement(By.Id("deleteBtn")).Click();
-            //driver.FindElement(By.Id("course-delete-button")).Click();
+            var tableRow = By.ClassName("dataRaw");
+            Thread.Sleep(2000);
+            var numberOfRows = driver.FindElements(tableRow);
+            var test = numberOfRows.Count;
+            Assert.AreEqual(numberOfRows.Count, 0);
+
             Thread.Sleep(5000);
         }
+
 
         [TestCleanup]
         public void CleanUp()
